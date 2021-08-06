@@ -1,0 +1,2 @@
+@echo off
+"C:\Program Files\qemu\qemu-system-i386.exe" -L "C:\Program Files\qemu" -m 640M -machine kernel_irqchip=off -drive file=build\floppy.img,format=raw,if=floppy -drive file=build\hdd.img,format=raw -netdev tap,id=mynet0,ifname=Eth -net nic,model=rtl8139,netdev=mynet0 -object filter-dump,id=f1,netdev=mynet0,file=dump.dat -boot a -S -s  -no-shutdown -no-reboot  -monitor stdio
